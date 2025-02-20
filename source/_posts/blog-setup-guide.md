@@ -8,10 +8,23 @@ toc: true
 
 # 个人博客搭建实现指南
 
+## 环境要求
+1. Node.js
+   - 版本要求：>= 12.0
+   - 下载地址：https://nodejs.org
+   - 安装后会自动包含 npm 包管理器
+
+2. Hexo CLI
+   ```bash
+   # 安装 Hexo 命令行工具
+   npm install -g hexo-cli
+   ```
+
 ## 技术栈详解
 1. 核心环境
    - Node.js v22.12.0 (运行环境)
    - npm v10.8.3 (包管理器)
+   - Hexo CLI (命令行工具)
 
 2. 博客框架
    - Hexo v4.3.2 (静态博客生成器)
