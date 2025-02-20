@@ -112,7 +112,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://whitemoker.github.io/Blog/2025/02/20/hello-world.html" data-id="cm7dr4z1d00014zqhafgzfd9t" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://whitemoker.github.io/Blog/2025/02/20/hello-world.html" data-id="cm7dr63s00001e4qha95aenrg" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -161,6 +161,35 @@
 <li><p>Hexo CLI</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装 Hexo 命令行工具</span></span><br><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></li>
 </ol>
+<h2 id="本地环境搭建"><a href="#本地环境搭建" class="headerlink" title="本地环境搭建"></a>本地环境搭建</h2><ol>
+<li><p>创建并初始化博客：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建新目录</span></span><br><span class="line"><span class="built_in">mkdir</span> my-blog</span><br><span class="line"><span class="built_in">cd</span> my-blog</span><br><span class="line"></span><br><span class="line"><span class="comment"># 初始化Hexo项目</span></span><br><span class="line">hexo init</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装依赖</span></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取现有博客内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 克隆仓库</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/whitemoker/Blog.git temp</span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制文章</span></span><br><span class="line"><span class="built_in">cp</span> -r temp/source/_posts/* <span class="built_in">source</span>/_posts/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清理临时文件</span></span><br><span class="line"><span class="built_in">rm</span> -rf temp</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="文章管理流程"><a href="#文章管理流程" class="headerlink" title="文章管理流程"></a>文章管理流程</h2><h3 id="方法一：GitHub网页方式"><a href="#方法一：GitHub网页方式" class="headerlink" title="方法一：GitHub网页方式"></a>方法一：GitHub网页方式</h3><ol>
+<li>访问 <a target="_blank" rel="noopener" href="https://github.com/whitemoker/Blog">https://github.com/whitemoker/Blog</a></li>
+<li>进入 source&#x2F;_posts 目录</li>
+<li>点击 “Add file” 按钮上传 .md 文件</li>
+<li>提交文件后，在本地生成静态文件：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 克隆仓库</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/whitemoker/Blog.git</span><br><span class="line"><span class="built_in">cd</span> Blog</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装依赖</span></span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成静态文件</span></span><br><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交生成的文件</span></span><br><span class="line">git add public/</span><br><span class="line">git commit -m <span class="string">&quot;Generate static files for new blog post&quot;</span></span><br><span class="line">git push origin gh-pages</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="方法二：Git命令行方式"><a href="#方法二：Git命令行方式" class="headerlink" title="方法二：Git命令行方式"></a>方法二：Git命令行方式</h3><ol>
+<li><p>克隆仓库：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/whitemoker/Blog.git</span><br><span class="line"><span class="built_in">cd</span> Blog</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加文章：</p>
+<ul>
+<li>将 .md 文件复制到 source&#x2F;_posts&#x2F; 目录</li>
+<li>Markdown文件格式示例：<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章标题</span><br><span class="line">date: 2025-02-20</span><br><span class="line">tags: [标签1, 标签2]</span><br><span class="line">categories: 分类</span><br><span class="line"><span class="section">toc: true</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line"><span class="section"># 一级标题</span></span><br><span class="line"></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"></span><br><span class="line"><span class="section">### 三级标题</span></span><br><span class="line"></span><br><span class="line">文章内容...</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>生成静态文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装依赖</span></span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成静态文件</span></span><br><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>提交更改：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 提交Markdown源文件</span></span><br><span class="line">git add <span class="built_in">source</span>/_posts/your-article.md</span><br><span class="line">git commit -m <span class="string">&quot;Add new article: 文章标题&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交生成的静态文件</span></span><br><span class="line">git add public/</span><br><span class="line">git commit -m <span class="string">&quot;Generate static files for new article&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 推送到GitHub</span></span><br><span class="line">git push origin gh-pages</span><br></pre></td></tr></table></figure></li>
+</ol>
 <h2 id="技术栈详解"><a href="#技术栈详解" class="headerlink" title="技术栈详解"></a>技术栈详解</h2><ol>
 <li><p>核心环境</p>
 <ul>
@@ -188,39 +217,19 @@
 </ul>
 </li>
 </ol>
-<h2 id="文章上传和更新流程"><a href="#文章上传和更新流程" class="headerlink" title="文章上传和更新流程"></a>文章上传和更新流程</h2><h3 id="方法一：GitHub网页方式"><a href="#方法一：GitHub网页方式" class="headerlink" title="方法一：GitHub网页方式"></a>方法一：GitHub网页方式</h3><ol>
-<li>访问 <a target="_blank" rel="noopener" href="https://github.com/whitemoker/Blog">https://github.com/whitemoker/Blog</a></li>
-<li>进入 source&#x2F;_posts 目录</li>
-<li>点击 “Add file” 按钮上传 .md 文件</li>
-<li>提交文件后，需要在本地生成静态文件：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 克隆仓库</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/whitemoker/Blog.git</span><br><span class="line"><span class="built_in">cd</span> Blog</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装依赖</span></span><br><span class="line">npm install</span><br><span class="line">npm install hexo-cli</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成静态文件</span></span><br><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交生成的文件</span></span><br><span class="line">git add public/</span><br><span class="line">git commit -m <span class="string">&quot;Generate static files for new blog post&quot;</span></span><br><span class="line">git push origin gh-pages</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h3 id="方法二：Git命令行方式"><a href="#方法二：Git命令行方式" class="headerlink" title="方法二：Git命令行方式"></a>方法二：Git命令行方式</h3><ol>
-<li><p>克隆仓库：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/whitemoker/Blog.git</span><br><span class="line"><span class="built_in">cd</span> Blog</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>添加文章：</p>
-<ul>
-<li>将 .md 文件复制到 source&#x2F;_posts&#x2F; 目录</li>
-<li>Markdown文件格式示例：<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章标题</span><br><span class="line">date: 2025-02-20</span><br><span class="line">tags: [标签1, 标签2]</span><br><span class="line">categories: 分类</span><br><span class="line"><span class="section">toc: true</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line"><span class="section"># 一级标题</span></span><br><span class="line"></span><br><span class="line"><span class="section">## 二级标题</span></span><br><span class="line"></span><br><span class="line"><span class="section">### 三级标题</span></span><br><span class="line"></span><br><span class="line">文章内容...</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>生成静态文件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装依赖</span></span><br><span class="line">npm install</span><br><span class="line">npm install hexo-cli</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成静态文件</span></span><br><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>提交更改：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 提交Markdown源文件</span></span><br><span class="line">git add <span class="built_in">source</span>/_posts/your-article.md</span><br><span class="line">git commit -m <span class="string">&quot;Add new article: 文章标题&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交生成的静态文件</span></span><br><span class="line">git add public/</span><br><span class="line">git commit -m <span class="string">&quot;Generate static files for new article&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 推送到GitHub</span></span><br><span class="line">git push origin gh-pages</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
 <li>所有更改都在 gh-pages 分支上进行</li>
 <li>每次添加新文章后都需要重新生成静态文件</li>
 <li>文章会显示在 <a href="https://whitemoker.github.io/Blog">https://whitemoker.github.io/Blog</a></li>
+<li>确保本地环境配置正确再进行操作</li>
+<li>建议先在本地预览后再推送到GitHub</li>
 </ol>
-<h2 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h2><p>[原有内容保持不变…]</p>
+<p>[原有内容保持不变…]</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://whitemoker.github.io/Blog/2025/02/20/blog-setup-guide.html" data-id="cm7dr4z1a00004zqhcu4ffo9d" data-title="个人博客搭建实现指南" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://whitemoker.github.io/Blog/2025/02/20/blog-setup-guide.html" data-id="cm7dr63rx0000e4qhgzwx0460" data-title="个人博客搭建实现指南" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -316,7 +325,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://whitemoker.github.io/Blog/2025/02/20/hexo-setup-guide.html" data-id="cm7dr4z1g00044zqh7d9i6ahb" data-title="Hexo博客环境搭建指南" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://whitemoker.github.io/Blog/2025/02/20/hexo-setup-guide.html" data-id="cm7dr63s30004e4qh6k3eahzu" data-title="Hexo博客环境搭建指南" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -366,7 +375,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://whitemoker.github.io/Blog/2025/02/20/%E5%88%86%E8%AF%8D%E7%AE%97%E6%B3%95.html" data-id="cm7dr4z1i00064zqhasgf5dea" data-title="文本预处理-分词算法" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://whitemoker.github.io/Blog/2025/02/20/%E5%88%86%E8%AF%8D%E7%AE%97%E6%B3%95.html" data-id="cm7dr63s50006e4qhaljtfazi" data-title="文本预处理-分词算法" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -417,7 +426,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://whitemoker.github.io/Blog/2025/02/19/sample-with-toc.html" data-id="cm7dr4z1h00054zqh061p689m" data-title="示例文章：目录和标签功能展示" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://whitemoker.github.io/Blog/2025/02/19/sample-with-toc.html" data-id="cm7dr63s50005e4qh6j5t2w6a" data-title="示例文章：目录和标签功能展示" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
