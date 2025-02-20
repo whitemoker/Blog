@@ -7,7 +7,7 @@ language: zh-CN
 # URL
 url: https://whitemoker.github.io/Blog
 root: /Blog/
-permalink: :year/:month/:day/:title/
+permalink: :year/:month/:day/:title.html
 permalink_defaults:
   lang: zh-CN
 
