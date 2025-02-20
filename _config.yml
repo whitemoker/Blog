@@ -38,3 +38,8 @@ deploy:
   type: git
   repo: https://github.com/whitemoker/Blog.git
   branch: gh-pages
+
+# URL Handling
+permanent_link_pinyin:
+  enable: true
+  separator: '-'
