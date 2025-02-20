@@ -20,31 +20,39 @@ toc: true
    npm install -g hexo-cli
    ```
 
-## 技术栈详解
-1. 核心环境
-   - Node.js v22.12.0 (运行环境)
-   - npm v10.8.3 (包管理器)
-   - Hexo CLI (命令行工具)
+## 本地环境搭建
+1. 创建并初始化博客：
+   ```bash
+   # 创建新目录
+   mkdir my-blog
+   cd my-blog
+   
+   # 初始化Hexo项目
+   hexo init
+   
+   # 安装依赖
+   npm install
+   ```
 
-2. 博客框架
-   - Hexo v4.3.2 (静态博客生成器)
-   - hexo-toc (文章目录生成插件)
+2. 获取现有博客内容：
+   ```bash
+   # 克隆仓库
+   git clone https://github.com/whitemoker/Blog.git temp
+   
+   # 复制文章
+   cp -r temp/source/_posts/* source/_posts/
+   
+   # 清理临时文件
+   rm -rf temp
+   ```
 
-3. 部署平台
-   - GitHub Pages (静态网站托管)
-   - Git (版本控制)
-
-4. 内容格式
-   - Markdown (文章编写格式)
-   - Front Matter (文章元数据配置)
-
-## 文章上传和更新流程
+## 文章管理流程
 
 ### 方法一：GitHub网页方式
 1. 访问 https://github.com/whitemoker/Blog
 2. 进入 source/_posts 目录
 3. 点击 "Add file" 按钮上传 .md 文件
-4. 提交文件后，需要在本地生成静态文件：
+4. 提交文件后，在本地生成静态文件：
    ```bash
    # 克隆仓库
    git clone https://github.com/whitemoker/Blog.git
@@ -52,7 +60,6 @@ toc: true
    
    # 安装依赖
    npm install
-   npm install hexo-cli
    
    # 生成静态文件
    hexo clean
@@ -96,7 +103,6 @@ toc: true
    ```bash
    # 安装依赖
    npm install
-   npm install hexo-cli
    
    # 生成静态文件
    hexo clean
@@ -117,11 +123,29 @@ toc: true
    git push origin gh-pages
    ```
 
-### 注意事项
+## 技术栈详解
+1. 核心环境
+   - Node.js v22.12.0 (运行环境)
+   - npm v10.8.3 (包管理器)
+   - Hexo CLI (命令行工具)
+
+2. 博客框架
+   - Hexo v4.3.2 (静态博客生成器)
+   - hexo-toc (文章目录生成插件)
+
+3. 部署平台
+   - GitHub Pages (静态网站托管)
+   - Git (版本控制)
+
+4. 内容格式
+   - Markdown (文章编写格式)
+   - Front Matter (文章元数据配置)
+
+## 注意事项
 1. 所有更改都在 gh-pages 分支上进行
 2. 每次添加新文章后都需要重新生成静态文件
 3. 文章会显示在 https://whitemoker.github.io/Blog
-
-## 实现步骤
+4. 确保本地环境配置正确再进行操作
+5. 建议先在本地预览后再推送到GitHub
 
 [原有内容保持不变...]
