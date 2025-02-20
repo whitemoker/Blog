@@ -7,7 +7,9 @@ language: zh-CN
 # URL
 url: https://whitemoker.github.io/Blog
 root: /Blog/
-permalink: :title/
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+  lang: zh-CN
 
 # Directory
 source_dir: source
@@ -38,8 +40,3 @@ deploy:
   type: git
   repo: https://github.com/whitemoker/Blog.git
   branch: gh-pages
-
-# URL Handling
-permanent_link_pinyin:
-  enable: true
-  separator: '-'
